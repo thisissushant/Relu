@@ -37,7 +37,6 @@ const artists = [
     backgroundImage: "/placeholder.svg?height=126&width=244",
     avatarSrc: "/placeholder.svg?height=48&width=48",
   },
-  // Add more artists as needed
 ];
 
 export default function RightMenu() {
@@ -45,7 +44,6 @@ export default function RightMenu() {
 
   return (
     <div className="w-[260px] h-[707px] bg-white shadow-lg flex flex-col mr-2">
-      {/* Tab switcher */}
       <div className="flex ">
         <button
           className={`flex-1 py-2 px-4 text-sm font-medium ${
@@ -67,7 +65,6 @@ export default function RightMenu() {
         </button>
       </div>
 
-      {/* Content area */}
       <div className="flex-1 overflow-y-auto p-4">
         {selectedTab === "artists" ? (
           <div className="space-y-4">
