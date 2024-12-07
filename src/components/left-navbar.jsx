@@ -24,7 +24,7 @@ const navItems = [
 
 export default function LeftNavbar() {
   return (
-    <nav className="w-[260px] h-[707px] bg-white shadow-lg flex flex-col justify-between">
+    <nav className="w-[260px] h-[707px] bg-white flex flex-col justify-between">
       <ul className="space-y-2 pt-4">
         {navItems.map((item) => (
           <li key={item.name}>

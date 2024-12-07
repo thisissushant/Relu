@@ -46,12 +46,10 @@ export default function RightMenu() {
   return (
     <div className="w-[260px] h-[707px] bg-white shadow-lg flex flex-col mr-2">
       {/* Tab switcher */}
-      <div className="flex border-b">
+      <div className="flex ">
         <button
           className={`flex-1 py-2 px-4 text-sm font-medium ${
-            selectedTab === "artists"
-              ? "text-blue-600 border-b-2 border-blue-600"
-              : "text-gray-500"
+            selectedTab === "artists" ? "text-green-600 " : "text-gray-500"
           }`}
           onClick={() => setSelectedTab("artists")}
         >
@@ -60,7 +58,7 @@ export default function RightMenu() {
         <button
           className={`flex-1 py-2 px-4 text-sm font-medium ${
             selectedTab === "photographers"
-              ? "text-blue-600 border-b-2 border-blue-600"
+              ? "text-green-600 "
               : "text-gray-500"
           }`}
           onClick={() => setSelectedTab("photographers")}

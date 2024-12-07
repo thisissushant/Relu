@@ -1,10 +1,10 @@
 import {} from "react";
 import { Search, Filter } from "lucide-react";
-import Avtar1 from "../assets/favicon.png";
+import Avtar1 from "../assets/istockphoto-1092844736-612x612.jpg";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between w-full h-20 bg-gray-100 ">
+    <header className="flex items-center justify-between w-full h-20 bg-white ">
       {/* Left section - Logo */}
       <div className="w-[260px] h-20 flex items-center justify-center ">
         <img src={Avtar1} alt="Logo" className="h-10" />
