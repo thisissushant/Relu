@@ -3,9 +3,9 @@ import { Search, Filter } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between w-full h-20 bg-white shadow-md">
+    <header className="flex items-center justify-between w-full h-20 bg-gray-100 ">
       {/* Left section - Logo */}
-      <div className="w-[260px] h-20 flex items-center justify-center">
+      <div className="w-[260px] h-20 flex items-center justify-center ">
         <img
           src="/placeholder.svg?height=40&width=120"
           alt="Logo"
@@ -29,7 +29,7 @@ export default function Header() {
       </div>
 
       {/* Right section - Become a Seller */}
-      <div className="w-[260px] h-20 flex items-center justify-center bg-[#88C2BB]">
+      <div className="w-[260px] h-20 flex items-center justify-center bg-[#88C2BB] mr-2">
         <button className="text-white font-semibold text-lg hover:underline">
           Become a Seller
         </button>
