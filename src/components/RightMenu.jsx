@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ArtistCard from "./artist-card";
+import ArtistCard from "./ArtistCard";
 
 const artists = [
   {

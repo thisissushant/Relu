@@ -1,15 +1,16 @@
 /* eslint-disable react/prop-types */
 import {} from "react";
-import { useAuth } from "./AuthProvider";
-import { Navigate } from "react-router-dom"; // if using React Router
+import { Navigate } from "react-router-dom";
+import { auth } from "../firebaseConfig";
 
-const ProtectedRoute = ({ children }) => {
-  const { user, loading } = useAuth();
+const PrivateRoute = ({ children }) => {
+  const currentUser = auth.currentUser;
 
-  if (loading) return <div>Loading...</div>;
-  if (!user) return <Navigate to="/login" />;
+  if (!currentUser) {
+    return <Navigate to="/login" replace />;
+  }
 
   return children;
 };
 
-export default ProtectedRoute;
+export default PrivateRoute;

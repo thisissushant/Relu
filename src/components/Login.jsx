@@ -1,19 +1,28 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Logged in successfully!");
+      navigate("/dashboard");
     } catch (error) {
-      alert(error.message);
+      console.error("Login failed", error);
+    } finally {
+      setLoading(false);
     }
+  };
+  const handleSignIn = () => {
+    navigate("/register");
   };
 
   return (
@@ -59,16 +68,22 @@ export default function Login() {
           </div>
           <button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+            className={`w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out transform ${
+              loading ? "cursor-not-allowed" : "hover:scale-105"
+            } focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50`}
+            disabled={loading}
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
         <p className="mt-8 text-center text-sm text-green-600">
           Dont have an account?{" "}
-          <a href="#" className="font-medium text-green-800 hover:underline">
+          <button
+            onClick={handleSignIn}
+            className="font-medium text-green-800 hover:underline"
+          >
             Sign up
-          </a>
+          </button>
         </p>
       </div>
     </div>
